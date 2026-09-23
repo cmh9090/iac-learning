@@ -8,6 +8,14 @@ terraform {
       source = "hashicorp/random"
     }
   }
+
+  backend "s3" {
+    bucket         = "iac-learning-tfstate-dffd1bc2"  # your actual bucket name from the output
+    key            = "exercise-1/terraform.tfstate"
+    region         = "ap-southeast-1"
+    use_lockfile   = true
+    encrypt        = true
+  }
 }
 
 provider "aws" {
