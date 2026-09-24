@@ -43,7 +43,7 @@ jobs:
     needs: plan
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
-    #environment: production
+    environment: production
     defaults:
       run:
         working-directory: 02-s3-bucket
