@@ -10,11 +10,11 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "iac-learning-tfstate-dffd1bc2"  # your actual bucket name from the output
-    key            = "exercise-1/terraform.tfstate"
-    region         = "ap-southeast-1"
-    use_lockfile   = true
-    encrypt        = true
+    bucket       = "iac-learning-tfstate-dffd1bc2" # your actual bucket name from the output
+    key          = "exercise-1/terraform.tfstate"
+    region       = "ap-southeast-1"
+    use_lockfile = true
+    encrypt      = true
   }
 }
 
@@ -27,7 +27,7 @@ resource "random_id" "suffix" {
 }
 
 resource "aws_s3_bucket" "learning" {
-  bucket = "iac-learning-${random_id.suffix.hex}"
+  bucket        = "iac-learning-${random_id.suffix.hex}"
   force_destroy = true
   tags = {
     Name    = "iac-learning-bucket"
