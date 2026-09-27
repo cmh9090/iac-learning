@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: 02-s3-bucket
+        working-directory: three-tier
+    env:
+      TF_VAR_db_username: ${{ secrets.DB_USERNAME }}
+      TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
+      TF_VAR_key_name: ${{ secrets.EC2_KEY_NAME }}
 
     steps:
       - name: Checkout code
@@ -46,7 +50,11 @@ jobs:
     environment: production
     defaults:
       run:
-        working-directory: 02-s3-bucket
+        working-directory: 05-three-tier
+    env:
+      TF_VAR_db_username: ${{ secrets.DB_USERNAME }}
+      TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
+      TF_VAR_key_name: ${{ secrets.EC2_KEY_NAME }}
 
     steps:
       - name: Checkout code
