@@ -5,6 +5,13 @@
 *.tfstate
 *.tfstate.*
 
+# .tfvars files
+*.tfvars
+*.tfvars.*
+
+#.pem files
+*.pem
+
 # Crash log files
 crash.log
 crash.*.log

@@ -13,12 +13,12 @@ variable "db_sg_id" {
 
 variable "db_engine" {
   type    = string
-  default = "mysql"  # or "postgres"
+  default = "mysql" # or "postgres"
 }
 
 variable "db_engine_version" {
   type    = string
-  default = "8.0"    # match to your engine choice
+  default = "8.0" # match to your engine choice
 }
 
 variable "db_name" {
